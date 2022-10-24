@@ -23,7 +23,7 @@ function getTotalNumberOfBorrows(account, books) {
 
 function getBooksPossessedByAccount(account, books, authors) {
   let result = [];
-  let borrowMatch = [];
+  let booksBorrowed = [];
   books.forEach((item) => {
     const borrowed = item.borrows;
     const book = {
@@ -35,12 +35,11 @@ function getBooksPossessedByAccount(account, books, authors) {
       borrows: {}
     };
     const { id, title, genre, authorId, author, borrows } = book;
-
     borrowed.forEach((borrow) => {
       if (borrow.id === account.id && borrow.returned === false) {
         result.push(book);
-        borrowMatch.push(borrow);
-        book.borrows = borrowMatch;
+        booksBorrowed.push(borrow);
+        book.borrows = booksBorrowed;
         book.author = authors.filter((auth) => auth.id === book.authorId)[0];
       }
     });
