@@ -10,20 +10,18 @@ function sortAccountsByLastName(accounts) {
 }
 
 function getTotalNumberOfBorrows(account, books) {
-  let totalBorrows = 0;
-  for (let i = 0; i < books.length; i++) {
-    for (let j = 0; j < books[i].borrows.length; j++) {
-      if (account.id === books[i].borrows[j].id) {
-        totalBorrows += 1;
-      }
-    }
-  }
-  return totalBorrows;
+  const accountId = account.id;
+  // for given account, check if each book has been checked out by the account
+  return books.reduce((totalBorrows, { borrows }) => {
+    //if any "borrow" records match the accountId, add to totalBorrows
+    if (borrows.some((record) => record.id === accountId)) totalBorrows++;
+    return totalBorrows;
+  }, 0);
 }
 
 function getBooksPossessedByAccount(account, books, authors) {
   let result = [];
-  let booksBorrowed = [];
+  let borrowMatch = [];
   books.forEach((item) => {
     const borrowed = item.borrows;
     const book = {
@@ -35,11 +33,12 @@ function getBooksPossessedByAccount(account, books, authors) {
       borrows: {}
     };
     const { id, title, genre, authorId, author, borrows } = book;
+
     borrowed.forEach((borrow) => {
       if (borrow.id === account.id && borrow.returned === false) {
         result.push(book);
-        booksBorrowed.push(borrow);
-        book.borrows = booksBorrowed;
+        borrowMatch.push(borrow);
+        book.borrows = borrowMatch;
         book.author = authors.filter((auth) => auth.id === book.authorId)[0];
       }
     });

@@ -1,12 +1,16 @@
-
 function findAuthorById(authors, id) {
-  let found = authors.find((author) => author.id === id);
-  return found;
+  // return author with matched ID
+  return findById(authors, id);
 }
 
 function findBookById(books, id) {
-  let booksMatched = books.find((book) => book.id === id);
-  return booksMatched;
+  // return book by matched ID
+  return findById(books, id);
+}
+
+// helper function: provide ID to locate corresponding entry in a given array
+function findById(entries, id) {
+  return entries.find((entry) => entry.id === id);
 }
 
 function partitionBooksByBorrowedStatus(books) {
