@@ -33,9 +33,40 @@ function getBorrowersForBook(book, accounts) {
     .slice(0, 10);
 }
 
+function findBooksByGenre(genre) {
+  var books = {
+      "Mystery": ["Book 1", "Book 2", "Book 3"],
+      "Fantasy": ["Book 4", "Book 5"],
+      // Add more genres and corresponding books here
+  };
+
+  return books[genre] || [];
+}
+
+function showBooksByGenre(genre) {
+  var bookListElement = document.getElementById("books-by-genre");
+  bookListElement.innerHTML = "";
+
+  var books = findBooksByGenre(genre);
+
+  if (books.length > 0) {
+      for (var i = 0; i < books.length; i++) {
+          var bookItem = document.createElement("li");
+          bookItem.textContent = books[i];
+          bookListElement.appendChild(bookItem);
+      }
+  } else {
+      var noBooksItem = document.createElement("li");
+      noBooksItem.textContent = "No books available in this genre.";
+      bookListElement.appendChild(noBooksItem);
+  }
+}
+
 module.exports = {
   findAuthorById,
   findBookById,
   partitionBooksByBorrowedStatus,
-  getBorrowersForBook
+  getBorrowersForBook,
+  findBooksByGenre,
+  showBooksByGenre
 };

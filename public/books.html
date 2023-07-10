@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="icon" href="favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-
-    <title>Local Libary - Admin Dashboard - Books</title>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>My Little Library - Book Stats</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
 
   <body>
-    <header class="container-fluid bg-light border-bottom">
-      <nav class="row align-items-center">
-        <h1 class="h4 px-3">Local Library</h1>
-        <div class="col">
-          <ul class="nav py-3">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Overall Stats</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./books.html">Stats by Book</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./accounts.html">Stats by Account</a>
-            </li>
-          </ul>
+     <!-- Navigation-->
+     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+          <a class="navbar-brand" href="#page-top">My Little Library</a>
+          <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="./index.html">Overall Stats</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./books.html">Stats by Book</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./accounts.html">Stats by Account</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Book Stats</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
         </div>
-      </nav>
-    </header>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">Click a book to view basic information about the book and its borrowers.</p>
+    </div>
+</header>
 
     <main class="container my-4">
       <section class="row">
@@ -51,6 +70,28 @@
         <article id="book-selection" class="col-7"></article>
       </section>
     </main>
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container">
+          <div class="row">
+              <!-- Footer Location-->
+              <div class="col-lg-4 mb-5 mb-lg-0">
+                  <h4 class="text-uppercase mb-4">Location</h4>
+                  <p class="lead mb-0">
+                      Chicago, Illinois
+                      <br />
+                      United States
+                  </p>
+              </div>
+              <!-- Footer Social Icons-->
+              <div class="col-lg-4 mb-5 mb-lg-0">
+                  <h4 class="text-uppercase mb-4">Contact Me</h4>
+                  <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/stefanie-engstrom/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                  <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/s3ngstrom"><i class="fab fa-fw fa-github"></i></a>
+              </div>
+          </div>
+      </div>
+  </footer>
 
     <script src="./data/accounts.js"></script>
     <script src="./data/authors.js"></script>
@@ -58,5 +99,9 @@
     <script src="./setup.js"></script>
     <script src="./src/books.js"></script>
     <script src="./renderers/books.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
   </body>
 </html>
