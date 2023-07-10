@@ -11044,3 +11044,7 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+.about-text-center {
+  text-align: center;
+}
