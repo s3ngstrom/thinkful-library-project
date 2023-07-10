@@ -21,8 +21,11 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "colors": "1.4.0",  
+    "colors": "1.4.0",
     "live-server": "1.2.1",
     "mocha": "^8.1.1"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
